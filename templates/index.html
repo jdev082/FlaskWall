@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60" /> 
+    <title>FlaskWall</title>
+</head>
+
+<body>
+    <form method=post action=/post>
+        <input name="name">
+        <input name="content">
+        <input type=submit name=save value=save>
+      </form>
+    <br />
+    <style>
+        body {
+            line-height: 0.5;
+        }
+        br {
+            line-height: 4;
+        }
+    </style>
+    {% for p in get_msgs %}
+    <b>{{ p.name }}</b>
+    <p> {{ p.content }}</p>
+   {% endfor %}
+
+
+</body>
+
+</html>
